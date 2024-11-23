@@ -6,7 +6,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            ` ${isActive ? "bg-[#9538E2] text-white" : ""}`
+            `text-lg font-bold ${isActive ? "bg-[#5238e2] text-white" : ""}`
           }
           to="/"
         >
@@ -16,7 +16,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            ` ${isActive ? "bg-[#9538E2] text-white" : ""}`
+            `text-lg font-bold ${isActive ? "bg-[#5238e2] text-white" : ""}`
           }
           to="/profile"
         >
@@ -26,7 +26,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            ` ${isActive ? "bg-[#9538E2] text-white" : ""}`
+            `text-lg font-bold ${isActive ? "bg-[#5238e2] text-white" : ""}`
           }
           to="/event"
         >
@@ -63,7 +63,14 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Aspiro</a>
+          <div className="flex gap-1">
+            <img
+              className="w-12 h-9 bg-transparent"
+              src="https://i.ibb.co.com/hXykW23/bg.png"
+              alt=""
+            />
+            <a className=" text-3xl text-blue-900 font-bold">ASPIRO</a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

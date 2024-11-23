@@ -1,0 +1,63 @@
+[
+    {
+      "image": "https://i.ibb.co.com/7bcCV4X/Image-Icon-Service-5.png",
+      "name": "Career Counseling Sessions",
+      "category": "Online",
+      "des": "One-on-one sessions to help you choose the right career path based on your skills and interests.",
+      "pricing": "$100/hr",
+      "duration": "05-12-24 5-6pm",
+      "counselor": "John Doe",
+      "rating": 4.8
+    },
+    {
+      "image": "https://i.ibb.co.com/GQBttXh/815854-document-512x512.png",
+      "name": "Resume Review",
+      "category": "Online",
+      "des": "Get a detailed review of your resume, with tips to make it stand out to employers.",
+      "pricing": "$50 per resume",
+      "duration": "05-12-24 7-8pm",
+      "counselor": "Jane Smith",
+      "rating": 4.7
+    },
+    {
+      "image": "https://i.ibb.co.com/c624pDH/worker-icon-training-and-coaching-icon-productivity-icon-MKTW50ji.jpg",
+      "name": "Interview Coaching",
+      "category": "Offline",
+      "des": "Prepare for your next interview with personalized coaching, including mock interviews.",
+      "pricing": "$120/hr",
+      "duration": "06-12-24 3-4pm",
+      "counselor": "Emily Clark",
+      "rating": 4.9
+    },
+    {
+      "image": "https://i.ibb.co.com/y82hhr7/430-4307907-group-coaching-group-coaching-icon-png.jpg",
+      "name": "Group Career Coaching",
+      "category": "Group",
+      "des": "Join a group of like-minded individuals for career coaching sessions with a focus on networking and career development.",
+      "pricing": "$40 per person",
+      "duration": "06-12-24 2-3pm",
+      "counselor": "Mark Johnson",
+      "rating": 4.6
+    },
+    {
+      "image": "https://i.ibb.co.com/fHg4039/233-2334174-icono-programador-expert-guidance-icon-hd-png-download.png",
+      "name": "Career Guidance Workshop",
+      "category": "Offline",
+      "des": "A comprehensive workshop to guide you through the process of career planning, from choosing a field to securing a job.",
+      "pricing": "$200 per session",
+      "duration": "07-12-24 10-12am",
+      "counselor": "Sophia Lee",
+      "rating": 5.0
+    },
+    {
+      "image": "https://i.ibb.co.com/fYsGNnv/Image-Icon-Service-2.png",
+      "name": "Leadership Training",
+      "category": "Online",
+      "des": "Access career advice from the comfort of your home with personalized, one-on-one online sessions.",
+      "pricing": "$80/hr",
+      "duration": "06-12-24 4-5pm",
+      "counselor": "David Brown",
+      "rating": 4.8
+    }
+  ]
+  
