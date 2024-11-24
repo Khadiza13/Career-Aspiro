@@ -3,6 +3,7 @@ import Layout from "../Layouts/Layout";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import Services from "../components/Services";
+import Choose from "../components/Choose";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             path: "/",
             element: <Services></Services>,
             loader: () => fetch("../services.json"),
+          },
+          {
+            path: "/",
+            element: <Choose></Choose>,
           },
         ],
       },

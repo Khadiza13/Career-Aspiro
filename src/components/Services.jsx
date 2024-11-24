@@ -4,7 +4,6 @@ import Card from "./Card";
 
 const Services = () => {
   const data = useLoaderData();
-  //console.log(data);
   const [services, setServices] = useState([]);
   useEffect(() => {
     setServices(data);
