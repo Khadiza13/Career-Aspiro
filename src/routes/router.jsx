@@ -4,6 +4,9 @@ import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import Services from "../components/Services";
 import Choose from "../components/Choose";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +26,20 @@ const router = createBrowserRouter([
           {
             path: "/",
             element: <Choose></Choose>,
+          },
+        ],
+      },
+      {
+        path: "/auth",
+        element: <AuthLayout></AuthLayout>,
+        children: [
+          {
+            path: "/auth/login",
+            element: <Login></Login>,
+          },
+          {
+            path: "/auth/register",
+            element: <Register></Register>,
           },
         ],
       },

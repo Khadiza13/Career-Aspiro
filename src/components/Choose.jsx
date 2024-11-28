@@ -37,7 +37,7 @@ const Choose = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-16 ">
+    <div className="bg-blue-50 py-16 ">
       <div className="w-10/12 mx-auto">
         <div className="text-center mb-10" data-aos="fade-up">
           <h3 className="text-blue-600 text-lg font-semibold uppercase">
@@ -52,7 +52,7 @@ const Choose = () => {
             <div
               key={idx}
               className="flex items-start bg-white p-6 rounded-lg shadow-md"
-              data-aos="fade-up" // Add AOS animation here
+              data-aos="fade-up"
               data-aos-delay={idx * 100}
             >
               <div className="w-14 h-14 bg-blue-600 flex items-center justify-center rounded-md mr-4">

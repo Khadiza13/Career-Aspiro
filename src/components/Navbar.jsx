@@ -1,6 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -82,7 +85,10 @@ const Navbar = () => {
               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
             />
           </div>
-          <a className="btn">Button</a>
+
+          <Link to="/auth/login" className="btn ">
+            {user ? user.name : `Login`}
+          </Link>
         </div>
       </div>
     </div>
