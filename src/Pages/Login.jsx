@@ -1,6 +1,25 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  const { loginUser, setUser } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get("email");
+
+    const pass = form.get("pass");
+    console.log({ email, pass });
+    loginUser(email, pass)
+      .then((res) => {
+        const user = res.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
+      });
+  };
   return (
     <div>
       <div className="min-h-screen flex justify-center items-center">
@@ -8,13 +27,14 @@ const Login = () => {
           <h2 className="text-blue-900 text-2xl font-bold text-center pt-6">
             Login
           </h2>
-          <form className="card-body">
+          <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
                 required
@@ -26,6 +46,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
+                name="pass"
                 placeholder="password"
                 className="input input-bordered"
                 required
