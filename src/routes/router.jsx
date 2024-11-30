@@ -9,6 +9,8 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Details from "../Pages/Details";
 import PrivateRoute from "./PrivateRoute";
+import Event from "../Pages/Event";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -56,11 +58,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <h1>profile page</h1>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/event",
-        element: <h1>event page</h1>,
+        element: (
+          <PrivateRoute>
+            <Event></Event>
+          </PrivateRoute>
+        ),
       },
     ],
   },

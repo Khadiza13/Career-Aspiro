@@ -1,11 +1,16 @@
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { auth, AuthContext } from "../provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 const Login = () => {
   const { loginUser, setUser, loginWithGoogle } = useContext(AuthContext);
+  const [showpass, setShowpass] = useState(false);
+  const emailref = useRef();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,8 +41,19 @@ const Login = () => {
         toast.error(`Google login failed: ${error.message}`);
       });
   };
+
+  const handleforget = () => {
+    const email = emailref.current.value;
+    sendPasswordResetEmail(auth, email).then(() => {
+      toast.success("Email sent");
+    });
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Login | Career Aspiro</title>
+      </Helmet>
       <ToastContainer />
       <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -52,23 +68,31 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                ref={emailref}
                 placeholder="email"
                 className="input input-bordered"
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={showpass ? "text" : "password"}
                 name="pass"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered pr-10"
                 required
               />
-              <label className="label">
+              <button
+                type="button"
+                onClick={() => setShowpass(!showpass)}
+                className="absolute top-12 right-3 flex items-center text-gray-500"
+              >
+                {showpass ? <FaEyeSlash /> : <FaEye />}
+              </button>
+              <label className="label" onClick={handleforget}>
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const Details = () => {
@@ -23,6 +24,9 @@ const Details = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Details | Career Aspiro</title>
+      </Helmet>
       <div className="hero bg-[#271470]">
         <div className="hero-content text-center">
           <div className="max-w-4xl py-20 ">

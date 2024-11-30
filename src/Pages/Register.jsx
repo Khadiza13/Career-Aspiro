@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [showpass, setShowpass] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -67,6 +70,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Register | Career Aspiro</title>
+      </Helmet>
       <ToastContainer />
       <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -110,17 +116,24 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={showpass ? "text" : "password"}
                 name="pass"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered pr-10"
                 required
               />
+              <button
+                type="button"
+                onClick={() => setShowpass(!showpass)}
+                className="absolute top-12 right-3 flex items-center text-gray-500"
+              >
+                {showpass ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-[#0047ab]  text-white font-bold text-lg">
