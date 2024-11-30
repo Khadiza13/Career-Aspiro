@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const Card = ({ item }) => {
   //console.log(item);
-  const { image, name, category, pricing, counselor } = item;
+  const { id, image, name, category, pricing, counselor } = item;
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Card = ({ item }) => {
           <p>Counselor: {counselor}</p>
           <p>Price: {pricing}</p>
           <div className="card-actions">
-            <Link to={``}>
+            <Link to={`/services/${id}`}>
               <button className="btn border-solid border-2 border-[#3b38e2] text-[#5238e2] rounded-full">
                 Learn More
               </button>

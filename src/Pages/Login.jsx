@@ -1,9 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const { loginUser, setUser } = useContext(AuthContext);
+  const { loginUser, setUser, loginWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -15,13 +18,27 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         setUser(user);
+        toast.success("Login successful!");
+        navigate("/");
       })
       .catch((error) => {
-        console.error("Error during registration:", error);
+        toast.error(`Login failed: ${error.message}`);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then(() => {
+        toast.success("Logged in with Google successfully!");
+        navigate("/"); // Redirect to the homepage
+      })
+      .catch((error) => {
+        toast.error(`Google login failed: ${error.message}`);
       });
   };
   return (
     <div>
+      <ToastContainer />
       <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <h2 className="text-blue-900 text-2xl font-bold text-center pt-6">
@@ -60,6 +77,14 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn bg-[#0047ab]  text-white font-bold text-lg">
                 Login
+              </button>
+            </div>
+            <div className="form-control">
+              <button
+                onClick={handleGoogleLogin}
+                className="btn bg-[#0047ab]  text-white font-bold text-lg"
+              >
+                Login with Google
               </button>
             </div>
           </form>

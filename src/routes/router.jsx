@@ -7,6 +7,8 @@ import Choose from "../components/Choose";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Details from "../Pages/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,15 @@ const router = createBrowserRouter([
             element: <Register></Register>,
           },
         ],
+      },
+      {
+        path: "/services/:id",
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("../services.json"),
       },
       {
         path: "/profile",
