@@ -20,8 +20,8 @@ const Event = () => {
           </div>
         </div>
       </div>
-      <div className="w-8/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 py-12 px-6">
-        <div className="card bg-base-100 w-[28rem] border-2 border-blue-900 rounded-xl ">
+      <div className="w-8/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 py-12 ">
+        <div className="card bg-base-100 w-80 lg:w-[28rem] border-2 border-blue-900 rounded-xl ">
           <figure>
             <img
               src="https://i.ibb.co.com/MM9n95w/adult-man-is-taking-an-online-management-course-2021-10-20-20-10-36-utc.png"
@@ -40,7 +40,7 @@ const Event = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-[28rem] order border-2 border-blue-900 rounded-xl">
+        <div className="card bg-base-100 w-80 lg:w-[28rem] order border-2 border-blue-900 rounded-xl">
           <figure>
             <img
               src="https://i.ibb.co.com/hc9LcdQ/University-Life-Illustration-1-1-1024x768.jpg"
@@ -59,7 +59,7 @@ const Event = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-[28rem] order border-2 border-blue-900 rounded-xl">
+        <div className="card bg-base-100 w-80 lg:w-[28rem] order border-2 border-blue-900 rounded-xl">
           <figure>
             <img src="https://i.ibb.co.com/MM9n95w/adult-man-is-taking-an-online-management-course-2021-10-20-20-10-36-utc.png" />
           </figure>
@@ -75,7 +75,7 @@ const Event = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-[28rem] order border-2 border-blue-900 rounded-xl">
+        <div className="card bg-base-100 w-80 lg:w-[28rem] order border-2 border-blue-900 rounded-xl">
           <figure>
             <img
               src="https://i.ibb.co.com/kg1WLSw/career-crossroads.jpg"
