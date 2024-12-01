@@ -17,19 +17,17 @@ export const auth = getAuth(app);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(user);
+  //console.log(user);
   const createUser = (email, pass, name, photoURL) => {
     return createUserWithEmailAndPassword(auth, email, pass)
       .then(() => {
         const currentUser = auth.currentUser;
 
-        // Update the profile of the authenticated user
         return updateProfile(currentUser, {
           displayName: name,
           photoURL: photoURL,
         }).then(() => {
-          console.log("Profile updated successfully!");
-          // Optional: Force-refresh user state to ensure updates are applied
+          //console.log("Profile updated successfully!");
           setUser({
             ...currentUser,
             displayName: name,
@@ -38,7 +36,7 @@ export const AuthProvider = ({ children }) => {
         });
       })
       .catch((error) => {
-        console.error("Error creating user or updating profile:", error);
+        // console.error("Error creating user or updating profile:", error);
         throw error;
       });
   };
@@ -57,10 +55,10 @@ export const AuthProvider = ({ children }) => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        console.log("Google login successful:", user);
+        //console.log("Google login successful:", user);
       })
       .catch((error) => {
-        console.error("Google login failed:", error);
+        //console.error("Google login failed:", error);
         throw error;
       });
   };
@@ -87,5 +85,3 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={authinfo}>{children}</AuthContext.Provider>
   );
 };
-
-// export default AuthProvider;

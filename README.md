@@ -57,7 +57,9 @@ Aspiro is a responsive career counseling website designed to provide users with 
 
 # 💻 Deployment and Hosting
 
-- Hosted on Netlify with Firebase integration for backend authentication and data management.
+- Hosted on Firebase
 - Deployed as a Single Page Application (SPA) to ensure smooth navigation and no errors on reloading private routes.
 
 # 🚀 Live Site
+
+https://career-aspiro.web.app/

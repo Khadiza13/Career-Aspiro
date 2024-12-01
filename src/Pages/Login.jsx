@@ -18,7 +18,7 @@ const Login = () => {
     const email = form.get("email");
 
     const pass = form.get("pass");
-    console.log({ email, pass });
+    // console.log({ email, pass });
     loginUser(email, pass)
       .then((res) => {
         const user = res.user;

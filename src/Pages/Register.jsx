@@ -17,7 +17,7 @@ const Register = () => {
     const email = form.get("email");
     const photoURL = form.get("photo");
     const pass = form.get("pass");
-    console.log({ name, email, photoURL, pass });
+    // console.log({ name, email, photoURL, pass });
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
     if (!passwordRegex.test(pass)) {
@@ -34,35 +34,12 @@ const Register = () => {
       .catch((error) => {
         toast.error(`Registration failed: ${error.message}`);
       });
-    // createUser(email, pass)
-    //   .then((res) => {
-    //     const user = res.user;
-
-    //     // Update the user's profile with name and photo URL
-    //     return updateProfile(user, {
-    //       displayName: name,
-    //       photoURL: photo,
-    //     }).then(() => {
-    //       // After successfully updating the profile, set the user context
-    //       setUser({
-    //         ...user,
-    //         displayName: name,
-    //         photoURL: photo,
-    //       });
-    //       console.log(user); // Should now include name and photoURL
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //     console.log(errorCode, errorMessage);
-    //   });
   };
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then(() => {
         toast.success("Registered with Google successfully!");
-        navigate("/"); // Redirect to the homepage
+        navigate("/");
       })
       .catch((error) => {
         toast.error(`Google registration failed: ${error.message}`);
