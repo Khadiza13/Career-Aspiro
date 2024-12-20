@@ -63,3 +63,34 @@ Aspiro is a responsive career counseling website designed to provide users with 
 # 🚀 Live Site
 
 https://career-aspiro.web.app/
+
+# 📖 How to Run Locally
+
+## Clone the repository
+
+```bash
+git clone https://github.com/your-username/career-aspiro.git
+```
+
+## Install dependencies
+
+```bash
+npm i
+```
+
+## Create a .env.local file and add Firebase configuration
+
+```bash
+VITE_apiKey=YOUR_FIREBASE_API_KEY
+VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
+VITE_projectId=YOUR_FIREBASE_PROJECT_ID
+VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
+VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
+VITE_appId=YOUR_FIREBASE_APP_ID
+```
+
+## Run the development server
+
+```bash
+npm run dev
+```
